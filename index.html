@@ -12,5 +12,40 @@
 
 <div id="resultado" style="margin-top: 1em;"></div>
 
+<script>
+  const monedas = [
+    {
+      nombre: "1 Kreuzer - Ciudad Libre de Frankfurt",
+      año: 1854,
+      contexto: "Emitida cuando Frankfurt era una ciudad-estado libre dentro de la Confederación Germánica. Poco antes de ser anexada por Prusia en 1866.",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Frankfurt_1854_Kreuzer.jpg/220px-Frankfurt_1854_Kreuzer.jpg"
+    },
+    {
+      nombre: "Moneda japonesa - Período Sengoku",
+      año: "c. 1570",
+      contexto: "Emitida por un daimyo local durante la época de guerra civil en Japón. Las monedas variaban mucho en forma y valor.",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Japanese_Sen_coin%2C_1570s.jpg/220px-Japanese_Sen_coin%2C_1570s.jpg"
+    },
+    {
+      nombre: "5 Kopeks - Imperio Ruso (Catalina II)",
+      año: 1771,
+      contexto: "Moneda de cobre pesada y amplia, emitida durante el reinado de Catalina la Grande. Parte de la expansión económica rusa.",
+      imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/5_kopeks_1771_EM_Catherine_II.jpg/220px-5_kopeks_1771_EM_Catherine_II.jpg"
+    }
+  ];
+
+  function mostrarMoneda() {
+    const random = monedas[Math.floor(Math.random() * monedas.length)];
+    const resultado = document.getElementById("resultado");
+
+    resultado.innerHTML = `
+      <h2>${random.nombre} (${random.año})</h2>
+      <img src="${random.imagen}" alt="Imagen de la moneda" style="max-width:100%; border-radius:6px;">
+      <p>${random.contexto}</p>
+    `;
+  }
+</script>
+
+  
 </body>
 </html>
